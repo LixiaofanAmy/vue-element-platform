@@ -1,38 +1,63 @@
 <template>
   <div class="login">
-    <el-form class="login-form" :model="loginForm">
+    <el-form class="login-form" ref="loginForm" :model="loginForm" :rules="rules">
       <div class="login-title">后台管理系统</div>
-      <el-form-item prop="mobileNo" label="用户名">
-        <el-input v-model="loginForm.mobileNo" placeholder="请输入用户名"></el-input>
+      <el-form-item prop="userName" label="用户名">
+        <el-input v-model="loginForm.userName" placeholder="请输入用户名"></el-input>
       </el-form-item>
       <el-form-item prop="password" label="密码">
         <el-input v-model="loginForm.password" type="password" placeholder="请输入密码"></el-input>
       </el-form-item>
       <el-form-item class="login-btn-wrap">
-        <el-button class="login-btn" type="primary" @click="login">登录</el-button>
+        <el-button class="login-btn" type="primary" @click="subminForm">登录</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 <script>
+import { login } from '@/apis/login'
 export default {
   data () {
     return {
       loginForm: {
-        mobileNo: '',
+        userName: '',
         password: ''
+      },
+      rules: {
+        userName: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 2, max: 5, message: '长度在 2 到 5 个字符', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 8, message: '长度在 6 到 8 个字符', trigger: 'blur' }
+        ]
       }
     }
   },
   beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.$store.commit('changeToken', '')
-    })
+    localStorage.removeItem('token')
+    next()
   },
   methods: {
-    login () {
-      this.$store.commit('changeToken', 'auth-token1')
-      this.$router.push('/views')
+    subminForm () {
+      this.$refs['loginForm'].validate((valid) => {
+        if (valid) {
+          this.loginHandler().then(() => {
+            this.$router.push('/views')
+          })
+        } else {
+          return false;
+        }
+      })
+    },
+    loginHandler () {
+      return login().then(res => {
+        res = res.data
+        if (res.code === 200) {
+          localStorage.setItem('token', res.data.token)
+        }
+      })
     }
   }
 }

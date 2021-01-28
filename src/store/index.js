@@ -6,22 +6,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: '',
-    menuTree: [],
     nodeCode: ''
   },
   mutations: {
-    changeToken (state, value) {
-      state.token = value
-      localStorage.setItem('token', value)
-    },
-    changeMenuTree (state, value) {
-      state.menuTree = value
-    },
-    changeFirstMenu (state, oMenu) {
+    changeFirstMenu (state, {oMenu, path}) {
       state.nodeCode = oMenu.nodeCode
-      router.replace(oMenu.menuUrl)
-    },
+      path === oMenu.menuUrl ? null : router.replace(oMenu.menuUrl)
+    }
   },
   actions: {
   },

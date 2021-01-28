@@ -1,0 +1,31 @@
+{
+  "code": 200,
+  "data": [{
+    "node": 1,
+    "nodeName": "系统组织角色管理",
+    "nodeCode": "1",
+    "nodeType": 1,
+    "parentNode": null,
+    "menuUrl": "",
+    "menuIcon": "",
+    "childNodes": [{
+      "node": 1,
+      "nodeName": "角色管理",
+      "nodeCode": "1-1",
+      "nodeType": 2,
+      "menuUrl": "/views/home",
+      "menuIcon": "",
+      "parentNode": 1,
+      "childNodes": []
+    }, {
+      "node": 2,
+      "nodeName": "用户管理",
+      "nodeCode": "1-2",
+      "nodeType": 2,
+      "menuUrl": "/views/about",
+      "menuIcon": "",
+      "parentNode": 1,
+      "childNodes": []
+    }]
+  }]
+}

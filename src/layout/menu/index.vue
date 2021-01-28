@@ -4,14 +4,15 @@
   </el-menu>
 </template>
 <script>
-import menuTree from './menu.js'
 import MenuItem from './MenuItem.vue'
 export default {
   name: 'Menu',
+  data () {
+    return {
+      menuTree: []
+    }
+  },
   computed: {
-    menuTree () {
-      return this.$store.state.menuTree
-    },
     nodeCode () {
       return this.$store.state.nodeCode
     }
@@ -20,11 +21,23 @@ export default {
     MenuItem,
   },
   mounted () {
-    this.$store.commit('changeMenuTree', menuTree)
-    const oMenu = this.getDefaultMenu()
-    this.$store.commit('changeFirstMenu', oMenu)
+    this.getMenu().then(() => {
+      const oMenu = this.getDefaultMenu()
+      this.$store.commit('changeFirstMenu', {
+        oMenu,
+        path: this.$route.path
+      })
+    })
   },
   methods: {
+    getMenu () {
+      return this.axios.get('/mock/menu.json').then(res => {
+        res = res.data
+        if (res.code === 200) {
+          this.menuTree = res.data
+        }
+      })
+    },
     getDefaultMenu () {
       const findMenuUrl = (oMenu) => {
         if (oMenu.childNodes.length === 0) {

@@ -12,19 +12,19 @@
 export default {
   methods: {
     logout () {
-      this.$store.commit('changeToken', '')
-      this.$router.push('/')
+      localStorage.removeItem('token')
+      this.$router.replace({name: 'login'})
     }
   }
 }
 </script>
 <style scoped>
 .header-right {
-  flex: 1;
   display: flex;
-  padding: 0 20px;
+  height: 40px;
+  padding: 20px;
   border-bottom: 1px solid #E4E7ED;
-  line-height: 80px;
+  line-height: 40px; 
 }
 .platform-name {
   flex: 1;

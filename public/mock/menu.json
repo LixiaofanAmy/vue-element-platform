@@ -2,7 +2,7 @@
   "code": 200,
   "data": [{
     "node": 1,
-    "nodeName": "系统组织角色管理",
+    "nodeName": "组织角色管理",
     "nodeCode": "1",
     "nodeType": 1,
     "parentNode": null,

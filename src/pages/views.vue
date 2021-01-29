@@ -1,32 +1,29 @@
 <template>
-  <el-container class="layout-container">
-    <el-header class="layout-header" height="80px">
-      <header-left></header-left>
-      <header-right></header-right>
-    </el-header>
-    <el-container>
-      <el-aside class="layout-aside" width="240px">
-        <left-menu></left-menu>
-      </el-aside>
-      <el-main>
-        <right-main></right-main>
-      </el-main>
-    </el-container>
-  </el-container>
+  <div class="layout-container">
+    <div class="layout-aside">
+      <layout-aside></layout-aside>
+    </div>
+    <div class="layout-container layout-container-direction layout-container-flex">
+      <div class="layout-header">
+        <layout-header></layout-header>
+      </div>
+      <div class="layout-main">
+        <layout-main></layout-main>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HeaderLeft from '@/layout/header/HeaderLeft.vue'
-import HeaderRight from '@/layout/header/HeaderRight.vue'
-import LeftMenu from '@/layout/menu'
-import RightMain from '@/layout/main'
+import LayoutAside from '@/layout/menu'
+import LayoutHeader from '@/layout/header'
+import LayoutMain from '@/layout/main'
 export default {
   name: 'Layout',
   components: {
-    HeaderLeft,
-    HeaderRight,
-    LeftMenu,
-    RightMain
+    LayoutHeader,
+    LayoutAside,
+    LayoutMain
   }
 }
 </script>
@@ -34,12 +31,23 @@ export default {
 <style scoped>
 .layout-container {
   height: 100%;
-}
-.layout-header {
   display: flex;
-  padding: 0;
+}
+.layout-container-direction {
+  flex-direction: column;
+}
+.layout-container-flex {
+  flex: 1;
 }
 .layout-aside {
+  width: 200px;
   background-color: #34495e;
+}
+.layout-header {
+  height: 80px;
+}
+.layout-main {
+  flex: 1;
+  overflow: hidden;
 }
 </style>

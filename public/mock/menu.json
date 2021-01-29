@@ -2,7 +2,7 @@
   "code": 200,
   "data": [{
     "node": 1,
-    "nodeName": "组织角色管理",
+    "nodeName": "安检",
     "nodeCode": "1",
     "nodeType": 1,
     "parentNode": null,
@@ -10,7 +10,7 @@
     "menuIcon": "",
     "childNodes": [{
       "node": 1,
-      "nodeName": "角色管理",
+      "nodeName": "任务管理",
       "nodeCode": "1-1",
       "nodeType": 2,
       "menuName": "home",
@@ -19,7 +19,7 @@
       "childNodes": []
     }, {
       "node": 2,
-      "nodeName": "用户管理",
+      "nodeName": "任务明细",
       "nodeCode": "1-2",
       "nodeType": 2,
       "menuName": "about",

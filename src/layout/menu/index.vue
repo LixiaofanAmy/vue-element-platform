@@ -1,7 +1,7 @@
 <template>
-  <el-menu class="menu" :router="true" :default-active="nodeCode" text-color="#99a3ae" active-text-color="#fff" background-color="#34495e">
-    <menu-item :menuTree="menuTree"></menu-item>
-  </el-menu>
+    <el-menu class="menu" :router="true" :default-active="nodeCode" text-color="#99a3ae" active-text-color="#fff" background-color="#34495e">
+      <menu-item :menuTree="menuTree"></menu-item>
+    </el-menu>
 </template>
 <script>
 import MenuItem from './MenuItem.vue'

@@ -41,7 +41,22 @@ export default {
 }
 .layout-aside {
   width: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #34495e;
+}
+.layout-aside::-webkit-scrollbar {
+  width: 8px;
+}
+
+.layout-aside::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgb(33, 50, 66);
+}
+
+.layout-aside::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgb(52, 73, 94);
 }
 .layout-header {
   height: 80px;

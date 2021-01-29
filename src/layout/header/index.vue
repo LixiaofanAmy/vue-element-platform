@@ -1,11 +1,11 @@
 <template>
   <div class="header-right">
-    <span class="platform-name">后台管理系统</span>
-    <span class="role">
-      <i class="role-phone">18688886666</i>
-      <i class="role-type">平台管理员</i>
-    </span>
-    <span class="logout-btn" @click="logout">退出</span>
+    <div class="platform-name">后台管理系统</div>
+    <div class="role">
+      <span class="role-phone">18688886666</span>
+      <span class="role-type">平台管理员</span>
+    </div>
+    <div class="logout-btn" @click="logout">退出</div>
   </div>
 </template>
 <script>
@@ -37,9 +37,6 @@ export default {
   font-size: 14px;
   color: #99a3ae;
   background: url('./../images/role.png') no-repeat left center;
-}
-.role i {
-  font-style: normal;
 }
 .role-phone {
   padding-right: 5px;

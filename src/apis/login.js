@@ -1,7 +1,7 @@
-import axios from 'axios'
+import request from '@/utils/request'
 
 export const login = (params) => {
-  return axios({
+  return request({
     url: '/mock/login.json',
     method: 'get',
     params

@@ -6,14 +6,14 @@
     "nodeCode": "1",
     "nodeType": 1,
     "parentNode": null,
-    "menuUrl": "",
+    "menuName": "",
     "menuIcon": "",
     "childNodes": [{
       "node": 1,
       "nodeName": "角色管理",
       "nodeCode": "1-1",
       "nodeType": 2,
-      "menuUrl": "/views/home",
+      "menuName": "home",
       "menuIcon": "",
       "parentNode": 1,
       "childNodes": []
@@ -22,7 +22,7 @@
       "nodeName": "用户管理",
       "nodeCode": "1-2",
       "nodeType": 2,
-      "menuUrl": "/views/about",
+      "menuName": "about",
       "menuIcon": "",
       "parentNode": 1,
       "childNodes": []

@@ -44,7 +44,7 @@ export default {
       this.$refs['loginForm'].validate((valid) => {
         if (valid) {
           this.loginHandler().then(() => {
-            this.$router.push('/views')
+            this.$router.push({name: 'views'})
           })
         } else {
           return false;
@@ -53,10 +53,7 @@ export default {
     },
     loginHandler () {
       return login().then(res => {
-        res = res.data
-        if (res.code === 200) {
-          localStorage.setItem('token', res.data.token)
-        }
+        localStorage.setItem('token', res.data.token)
       })
     }
   }

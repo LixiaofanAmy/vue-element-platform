@@ -5,6 +5,7 @@
 </template>
 <script>
 import MenuItem from './MenuItem.vue'
+import { getMenu } from '@/apis/layout'
 export default {
   name: 'Menu',
   data () {
@@ -25,17 +26,14 @@ export default {
       const oMenu = this.getDefaultMenu()
       this.$store.commit('changeFirstMenu', {
         oMenu,
-        path: this.$route.path
+        menuName: this.$route.name
       })
     })
   },
   methods: {
     getMenu () {
-      return this.axios.get('/mock/menu.json').then(res => {
-        res = res.data
-        if (res.code === 200) {
-          this.menuTree = res.data
-        }
+      return getMenu().then(res => {
+        this.menuTree = res.data
       })
     },
     getDefaultMenu () {

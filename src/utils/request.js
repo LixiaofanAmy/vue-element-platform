@@ -22,15 +22,15 @@ _axios.interceptors.response.use(
       case 200:
         return res
       case 401:
-        router.replace({name: 'login'})
+        router.replace({ name: 'login' })
         break
       default:
-        Message({ message: res.message || 'Error', type: 'error'})
+        Message({ message: res.message || 'Error', type: 'error' })
         return Promise.reject(new Error(res.message || 'Error'))
     }
   },
   error => {
-    Message({ message: error.message || 'Error', type: 'error'})
+    Message({ message: error.message || 'Error', type: 'error' })
     return Promise.reject(error);
   }
 )

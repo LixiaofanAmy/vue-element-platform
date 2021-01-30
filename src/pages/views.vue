@@ -19,7 +19,7 @@ import LayoutAside from '@/layout/menu'
 import LayoutHeader from '@/layout/header'
 import LayoutMain from '@/layout/main'
 export default {
-  name: 'Layout',
+  name: 'views',
   components: {
     LayoutHeader,
     LayoutAside,

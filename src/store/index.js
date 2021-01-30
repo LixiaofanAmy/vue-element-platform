@@ -9,9 +9,9 @@ export default new Vuex.Store({
     nodeCode: ''
   },
   mutations: {
-    changeFirstMenu (state, {oMenu, menuName}) {
+    changeFirstMenu(state, { oMenu, menuName }) {
       state.nodeCode = oMenu.nodeCode
-      menuName === oMenu.menuName ? null : router.replace({name: oMenu.menuName})
+      menuName === oMenu.menuName ? null : router.replace({ name: oMenu.menuName })
     }
   },
   actions: {

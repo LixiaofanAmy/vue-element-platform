@@ -10,10 +10,11 @@
 </template>
 <script>
 export default {
+  name: 'LayoutHeader',
   methods: {
-    logout () {
+    logout() {
       localStorage.removeItem('token')
-      this.$router.replace({name: 'login'})
+      this.$router.replace({ name: 'login' })
     }
   }
 }
@@ -23,8 +24,8 @@ export default {
   display: flex;
   height: 40px;
   padding: 20px;
-  border-bottom: 1px solid #E4E7ED;
-  line-height: 40px; 
+  border-bottom: 1px solid #e4e7ed;
+  line-height: 40px;
 }
 .platform-name {
   flex: 1;

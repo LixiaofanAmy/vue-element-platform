@@ -17,7 +17,8 @@
 <script>
 import { login } from '@/apis/login'
 export default {
-  data () {
+  name: 'login',
+  data() {
     return {
       loginForm: {
         userName: '',
@@ -35,23 +36,23 @@ export default {
       }
     }
   },
-  beforeRouteEnter (to, from, next) {
+  beforeRouteEnter(to, from, next) {
     localStorage.removeItem('token')
     next()
   },
   methods: {
-    subminForm () {
-      this.$refs['loginForm'].validate((valid) => {
+    subminForm() {
+      this.$refs['loginForm'].validate(valid => {
         if (valid) {
           this.loginHandler().then(() => {
-            this.$router.push({name: 'views'})
+            this.$router.push({ name: 'views' })
           })
         } else {
-          return false;
+          return false
         }
       })
     },
-    loginHandler () {
+    loginHandler() {
       return login().then(res => {
         localStorage.setItem('token', res.data.token)
       })

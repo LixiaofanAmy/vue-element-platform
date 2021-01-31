@@ -19,10 +19,7 @@ const routes = [
       {
         path: '/views/task-details',
         name: 'task-details',
-        component: () => import('@/views/security-check/TaskDetails'),
-        meta: {
-          title: '首页'
-        }
+        component: () => import('@/views/security-check/TaskDetails')
       },
       {
         path: '/views/task-management',

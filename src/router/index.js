@@ -25,12 +25,17 @@ const routes = [
         }
       },
       {
-        path: '/views/about',
-        name: 'about',
-        component: () => import('@/views/About.vue'),
+        path: '/views/task-details',
+        name: 'task-details',
+        component: () => import('@/views/security-check/TaskDetails'),
         meta: {
           title: '首页'
         }
+      },
+      {
+        path: '/views/task-management',
+        name: 'task-management',
+        component: () => import('@/views/security-check/TaskManagement')
       }
     ]
   }

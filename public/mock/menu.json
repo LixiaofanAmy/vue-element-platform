@@ -1,31 +1,36 @@
 {
   "code": 200,
-  "data": [{
-    "node": 1,
-    "nodeName": "安检",
-    "nodeCode": "1",
-    "nodeType": 1,
-    "parentNode": null,
-    "menuName": "",
-    "menuIcon": "",
-    "childNodes": [{
+  "data": [
+    {
       "node": 1,
-      "nodeName": "任务管理",
-      "nodeCode": "1-1",
-      "nodeType": 2,
-      "menuName": "home",
+      "nodeName": "安检",
+      "nodeCode": "1",
+      "nodeType": 1,
+      "parentNode": null,
+      "menuName": "",
       "menuIcon": "",
-      "parentNode": 1,
-      "childNodes": []
-    }, {
-      "node": 2,
-      "nodeName": "任务明细",
-      "nodeCode": "1-2",
-      "nodeType": 2,
-      "menuName": "about",
-      "menuIcon": "",
-      "parentNode": 1,
-      "childNodes": []
-    }]
-  }]
+      "childNodes": [
+        {
+          "node": 1,
+          "nodeName": "任务管理",
+          "nodeCode": "1-1",
+          "nodeType": 2,
+          "menuName": "task-management",
+          "menuIcon": "",
+          "parentNode": 1,
+          "childNodes": []
+        },
+        {
+          "node": 2,
+          "nodeName": "任务明细",
+          "nodeCode": "1-2",
+          "nodeType": 2,
+          "menuName": "task-details",
+          "menuIcon": "",
+          "parentNode": 1,
+          "childNodes": []
+        }
+      ]
+    }
+  ]
 }
